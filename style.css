@@ -1,0 +1,158 @@
+html {
+    font-family: "Fira Code", monospace;
+}
+
+#background {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: rgba(82, 82, 82, 0.986);
+}
+
+#layout {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: rgba(15, 12, 12, 0.767);
+    padding: 25px;
+    border: 10px solid black;
+    border-radius: 15px;
+
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items:center;
+}
+.row  {
+    display: flex;
+    gap: 8px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+#buttonBack {
+    font-size: 48px;
+}
+
+#comma {
+    padding-bottom: 10px;
+}
+
+#multiply {
+    padding-top: 28px;
+}
+
+#subtract {
+    padding-bottom: 8px;
+}
+
+#buttonZero:hover, #buttonBack:hover {
+    transition: transform 0.2s;
+    transform: scale(0.97, 0.97);
+}
+
+#multiply, #divide, #subtract, #add, #equals, #comma, #buttonBack {
+    background: rgb(44, 44, 44);
+    color: rgba(255, 255, 255, 0.76);
+}
+
+#multiply:hover, #divide:hover, #subtract:hover, #add:hover, #equals:hover, #comma:hover, #buttonBack:hover {
+    background: rgb(29, 29, 29);
+}
+
+button {
+    font-family: "Fira Code", monospace;
+    display: flex;
+    font-size: 76px;
+    width: 90px;
+    height: 90px;
+    border-radius: 4px;
+    border: 8px black solid;
+    justify-content: center; 
+    align-items: center;
+    color: rgba(255, 255, 255, 0.76);
+    background-color: rgba(44, 44, 44, 0.700);
+    font-weight: 600; 
+    transform: translateY(0);
+    transform: translateX(0);
+    transition: transform 0.2s; 
+}
+
+button:hover {
+    background: rgb(29, 29, 29);
+    transform: translateY(-2px);
+    transform: scale(0.92, 0.92);
+}
+
+#buttonZero {
+    width: 285px;
+}
+
+
+#buttonBack {
+    width: 188px;
+}
+
+#memory {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 640px;
+    border: 8px solid black;
+    border-radius: 5px;
+    overflow-y:auto ;
+    text-align: center; 
+    color: rgba(255, 255, 255, 0.76); 
+    background-color: rgba(44, 44, 44, 0.900);
+}
+
+#memoryTitle {
+    display: flex;
+    font-size: 36px;
+    border-bottom: 8px solid rgba(212, 212, 212, 0.280);
+    padding-bottom: 8px;
+    justify-content: center;
+    align-content: center;
+    font-weight: 700;
+}
+
+#memoryCalc {
+    display:flex ;
+    font-size: 24px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#displayMini {
+    height: 50px;
+    font-size: 40px;
+}
+
+#display {
+    height: 100px;
+    margin-top: 4px;
+    font-size: 100px;
+
+}
+
+#display, #displayMini {
+    border: 8px solid black;
+    width: 368px;       
+    border-radius: 5px;
+    align-content: center;
+    text-align: end;
+    color: rgba(255, 255, 255, 0.76);
+    background-color: rgba(44, 44, 44, 0.900);
+}    
+
