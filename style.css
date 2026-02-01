@@ -41,10 +41,6 @@ html {
 
 }
 
-#buttonBack {
-    font-size: 48px;
-}
-
 #comma {
     padding-bottom: 10px;
 }
@@ -57,17 +53,17 @@ html {
     padding-bottom: 8px;
 }
 
-#buttonZero:hover, #buttonBack:hover {
+#buttonZero:hover, #backSpace:hover {
     transition: transform 0.2s;
     transform: scale(0.97, 0.97);
 }
 
-#multiply, #divide, #subtract, #add, #equals, #comma, #buttonBack {
+#multiply, #divide, #subtract, #add, #equals, #comma, #backSpace {
     background: rgb(44, 44, 44);
     color: rgba(255, 255, 255, 0.76);
 }
 
-#multiply:hover, #divide:hover, #subtract:hover, #add:hover, #equals:hover, #comma:hover, #buttonBack:hover {
+#multiply:hover, #divide:hover, #subtract:hover, #add:hover, #equals:hover, #comma:hover, #backSpace:hover {
     background: rgb(29, 29, 29);
 }
 
@@ -100,8 +96,9 @@ button:hover {
 }
 
 
-#buttonBack {
+#backSpace {
     width: 188px;
+    font-size: 96px;
 }
 
 #memory {
