@@ -4,6 +4,7 @@ let previousNumber = "";
 let operator = null;
 let result = "";
 let justCalculated = false;
+let history = []
 
 variables.forEach(button => {
     button.addEventListener("click", () => {
@@ -17,7 +18,7 @@ variables.forEach(button => {
          
 } if (["+","-","*","/"].includes(value)) {
         if (justCalculated) {
-            previousNumber = result;
+            previousNumber = result
         } else {
             previousNumber = currentNumber;
         }
@@ -33,7 +34,7 @@ variables.forEach(button => {
         currentNumber = "";   
         updateDisplay(result); 
         updateMiniDisplay(result);
-        updateCalcHistory();
+        updateHistory(result)
         justCalculated = true;
         return;
 
@@ -55,14 +56,16 @@ function calculate(previousNumber, operator , currentNumber) {
                 case "*": result = previousNumber * currentNumber; break;
                 case "/": result = previousNumber / currentNumber; break;  
             }
-            return result;
+            return result;     
+    }       
+
+    function updateHistory(value) {
+            const history = document.querySelector("#memoryCalc");
+            history.textContent += value + "\n";
         }
         function updateDisplay(value) {              
             document.querySelector("#display").textContent = value; 
         }
         function updateMiniDisplay() {
             document.querySelector("#displayMini").textContent = "figuring it out";
-        }
-        function updateCalcHistory() {
-            document.querySelector("#memoryCalc").textContent = "figuring it out, yes";
         }
