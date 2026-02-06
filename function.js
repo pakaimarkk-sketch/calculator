@@ -5,27 +5,40 @@ let operator = null;
 let result = "";
 let justCalculated = false;
 let history = []
+let miniDisplay = []
 
 variables.forEach(button => {
     button.addEventListener("click", () => {
-        const value = button.textContent;
-    if (!isNaN(value)) {
-        if (currentNumber.length >= 7) return;
-        if (justCalculated) return;
-        currentNumber += value;
-        updateDisplay(currentNumber);
-        return;
+    const value = button.textContent;
+        if (!isNaN(value)) {    
+            if (justCalculated) {
+                result = "";
+                previousNumber = "";
+                currentNumber = value;
+                justCalculated = false;
+                updateDisplay(currentNumber);
+                updateMiniDisplay(currentNumber)
+                return;
+        }
+
+    if (currentNumber.length >= 9) return;
+
+    currentNumber += value;
+    updateDisplay(currentNumber);
+    return;
          
 } if (["+","-","*","/"].includes(value)) {
         if (justCalculated) {
             previousNumber = result
+            
         } else {
             previousNumber = currentNumber;
         }
         operator = value;
         currentNumber = "";
-        updateMiniDisplay(previousNumber);
         justCalculated = false;
+        
+        
         return;
 
     } if (value === "=") {
@@ -33,7 +46,7 @@ variables.forEach(button => {
         previousNumber = result;
         currentNumber = "";   
         updateDisplay(result); 
-        updateMiniDisplay(result);
+        updateMiniDisplay();
         updateHistory(result)
         justCalculated = true;
         return;
@@ -67,5 +80,6 @@ function calculate(previousNumber, operator , currentNumber) {
             document.querySelector("#display").textContent = value; 
         }
         function updateMiniDisplay() {
-            document.querySelector("#displayMini").textContent = "figuring it out";
+            const miniDisplay = document.querySelector("#displayMini");
+            miniDisplay.textContent = `${result}${operator}${currentNumber}`;
         }
